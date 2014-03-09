@@ -54,6 +54,31 @@ button{
 #master{
 	padding-bottom: 30px;
 }
+.badge{
+	font-size:15px;
+}
+.result .row{
+	margin-top: 5px;
+}
+
+
+
+@media (max-width:768px) { 
+
+.well h2{
+	font-size: 15px;
+	margin-bottom: 2px;
+	
+}
+.well{
+	padding-bottom: 5px;
+}
+hr{
+	margin: 5px;
+}
+
+}
+
 /*
     Bootflat 1.0.1
     Designed & Built by flathemes, http://www.flathemes.com
