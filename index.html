@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Convertisseur Loxo - Ortho</title>
+	
+<!-- 	<link rel="stylesheet" href="css/main.css"> -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootflat.css" rel="stylesheet">
+    <link href="css/bootflat-square.css" rel="stylesheet">
+
+	<style >
+		
+html,body {
+	min-height: 100%;
+	height: 100%;
+	background-color: #eee;
+}
+
+hr{
+	margin: 10px;
+}
+
+#footer {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	height: 30px;
+	background-color:rgb(230,230,230);
+	font-size: 10px;
+	text-align: right;
+}
+
+.container .text-muted {
+	margin: 10px 0;
+}
+
+.well{
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	height: 80%;
+}
+.well h2{
+	text-align: center;
+	background-color: #36a9e1;
+	width: 100%;
+	margin-top:0px;
+	padding: 10px;
+	font-size: 20px;
+	color: white;
+}
+.well .container{
+	width:100%;
+}
+
+button{
+	text-align: center;
+	margin: 10px 5%;
+	width: 90%;
+}
+
+.center{
+	text-align: center;
+}
+
+#master{
+	padding-bottom: 30px;
+}
+
+	</style>
+
+</head>
+<body>
+	<div class="navbar navbar-default navbar-static-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Convertisseur</a>
+			</div>
+		</div>
+	</div>
+
+<div id="master" class="container">
+    <div class="row">
+		<div class="col-sm-5 col-sm-offset-0  col-xs-offset-1  col-xs-10 well well-square">
+			<h2>Navigation</h2>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-2">
+					</div>
+					<div class="col-xs-5 center">
+						Latitude
+					</div>
+					<div class="col-xs-5 center">
+						Longitude
+					</div>
+				</div> 
+				<hr>
+				<div class="row">
+					<div class="col-xs-2">Origine:</div>
+					<div class="col-xs-5"><input id="OrigLat" type="text" class="form-control form-control-square" placeholder="460800N"></div>
+					<div class="col-xs-5"><input id="OrigLon" type="text" class="form-control form-control-square" placeholder="0011200W"></div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-xs-2">But:</div>
+					<div class="col-xs-5"><input id="ButLat" type="text" class="form-control form-control-square" placeholder="383800N"></div>
+					<div class="col-xs-5"><input id="ButLon" type="text" class="form-control form-control-square" placeholder="0270000W"></div>
+				</div>
+				<button id="goButton" type="button" class="btn btn-square">Naviguons!</button>
+			</div>
+		</div>
+		<div class="col-sm-offset-2 col-sm-5 col-xs-offset-1 col-xs-10  well well-square">
+			<h2>Route Orthodromique</h2>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-6">Cap:</div>
+					<div class="col-xs-6"><span id="OrthCap" class="badge pull-right">--</span></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">Distance:</div>
+					<div class="col-xs-6"><span id="OrthDis" class="badge pull-right">--</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-offset-2 col-sm-5 col-xs-offset-1 col-xs-10   well well-square">
+			<h2>Route Loxodromique</h2>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-6">Cap:</div>
+					<div class="col-xs-6"><span id="LoxoCap" class="badge pull-right">--</span></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">Distance:</div>
+					<div class="col-xs-6"><span id="LoxoDis" class="badge pull-right">--</span></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div id="footer">
+      <div class="container">
+        <p class="text-muted">&copy; MARICHAL Familly  - 2014 All Rights Reserved</p>
+      </div>
+    </div>
+
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
