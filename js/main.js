@@ -7,23 +7,21 @@ var CteRadDeg = (180 / CtePI);
 
   $(function () { $("input").jqBootstrapValidation({
        preventSubmit: true,
-
-  submitError: function($form, event, errors) {
+	   submitError: function($form, event, errors) {
                             // Here I do nothing, but you could do something like display 
                             // the error messages to the user, log, etc.
-                        },
-                        submitSuccess: function($form, event) {
-                            alert("OK");
-                            event.preventDefault();
-                        },
-                        filter: function() {
-                            return $(this).is(":visible");
-                        }
+	    },
+	    submitSuccess: function($form, event) {
+	        alert("OK");
+	        event.preventDefault();
+	    },
+	    filter: function() {
+	        return $(this).is(":visible");
+	    }
 }); } );
 
 
 $(document).ready(function() {
-	//size();
 
 	$('#goButton').click(function(){
 			
@@ -72,7 +70,7 @@ function FctLatToDouble(ParLat) {
     var LocFlag;
     var LocStr;
 
-    LocStr = ParLat;// + "00"
+    LocStr = ParLat;
     
     if (LocStr.substring(1, 1) > "9"){
         switch(LocStr.substring(1,1)){
@@ -293,11 +291,4 @@ function FormatNumberLength(num, length) {
         r = "0" + r;
     }
     return r;
-}
-
-function size(){
-	
-	var h=$(window).height()-$('#footer').height()-$(".navbar").height();
-alert(h);
-	$(".well").height(h*0.80);
 }
