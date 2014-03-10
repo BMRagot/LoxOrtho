@@ -61,7 +61,22 @@ button{
 	margin-top: 5px;
 }
 
+.help-block{
+	color: red;
+	font-size: 11px;
+	margin-bottom: 0px;
+}
+.help-block ul{
+	list-style-type: none;
+	padding-left: 2px;
+	margin-bottom: 0px;
+}
 
+.control-group.warning input.form-control {
+border-color: #fa6d81;
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(250, 109, 129, 0.6);
+outline: 0 none;
+}
 
 @media (max-width:768px) { 
 
