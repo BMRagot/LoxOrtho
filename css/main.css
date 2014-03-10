@@ -73,9 +73,12 @@ button{
 }
 
 .control-group.warning input.form-control {
-border-color: #fa6d81;
-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(250, 109, 129, 0.6);
-outline: 0 none;
+	border-color: #fa6d81;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(250, 109, 129, 0.6);
+	outline: 0 none;
+}
+div {
+	//border: 1px solid black;
 }
 
 @media (max-width:768px) { 
@@ -92,6 +95,23 @@ hr{
 	margin: 5px;
 }
 
+}
+
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none !important;
+ //   display:table !important;
+    margin-right:-4px;
+
+}
+.col-xs-2 {
+    /*
+float: none;
+    display: table-cell;
+    vertical-align: top;
+*/
 }
 
 /*
