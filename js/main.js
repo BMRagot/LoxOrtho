@@ -5,7 +5,10 @@ var CteRadNM = ((180 * 60) / CtePI);
 var CteDegRad = (CtePI / 180);
 var CteRadDeg = (180 / CtePI);
 
-  $(function () { $("input").jqBootstrapValidation({                        preventSubmit: true,submitError: function($form, event, errors) {
+  $(function () { $("input").jqBootstrapValidation({
+       preventSubmit: true,
+
+  submitError: function($form, event, errors) {
                             // Here I do nothing, but you could do something like display 
                             // the error messages to the user, log, etc.
                         },
