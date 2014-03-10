@@ -62,7 +62,15 @@
 				<hr>
 				<div class="row">
 					<div class="col-xs-2">Origine:</div>
-					<div class="col-xs-5"><input id="OrigLat" type="text" class="form-control form-control-square" placeholder="460800N"></div>
+					<div class="col-xs-5">
+					<div class="control-group">
+  <div class="controls">
+    <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="input-xlarge">
+  </div>
+ 
+</div>
+					
+					<input id="OrigLat" type="text" class="form-control form-control-square" placeholder="460800N"></div>
 					<div class="col-xs-5"><input id="OrigLon" type="text" class="form-control form-control-square" placeholder="0011200W"></div>
 				</div>
 				<hr>
@@ -103,13 +111,35 @@
 	</div>
 </div>
 
+<form class="form-horizontal" novalidate="">
+  <div class="control-group">
+    <label class="control-label">Type a number</label>
+    <div class="controls">
+      <input type="number" required  data-validation-required-message="Merci d'indiquer votre e-mail" data-validation-regex-regex="a.*z" 
+        data-validation-regex-message="Must start with 'a' and end with 'z'"/>
+      <p class="help-block">rr</p>
+    </div>
+¡
+<div class="controls">
+      <input type="number" required  data-validation-required-message="Merci d'indiquer votre e-mail" data-validation-regex-regex="a.*z" 
+        data-validation-regex-message="Must start with 'a' and end with 'z'"/>
+      <p class="help-block">rr</p>
+    </div>
+
+  </div>
+</form>
+
+
 	<div id="footer">
 		<div class="container">
 			<p class="text-muted">&copy; MARICHAL Familly  - 2014 All Rights Reserved</p>
 		</div>
 	</div>
 
-	<script src="js/jquery-1.11.0.min.js"></script>
+<!-- 	<script src="js/jquery-1.11.0.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> <!-- or use local jquery -->
+
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jqBootstrapValidation.js"></script>
 	<script src="js/main.js"></script>
 </body>
