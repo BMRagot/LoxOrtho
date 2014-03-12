@@ -12,7 +12,6 @@ var CteRadDeg = (180 / CtePI);
                             // the error messages to the user, log, etc.
 	    },
 	    submitSuccess: function($form, event) {
-	        alert("OK");
 	        event.preventDefault();
 	    },
 	    filter: function() {
