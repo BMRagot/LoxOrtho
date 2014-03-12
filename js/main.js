@@ -19,7 +19,6 @@ var CteRadDeg = (180 / CtePI);
 	    }
 }); } );
 
-
 $('#OrigLat, #ButLat').scroller({
                     theme: 'ios7',
                     mode: 'scroller',
@@ -100,6 +99,7 @@ $('#OrigLon, #ButLon').scroller({
 					}
       });
 
+$('#OrigLat, #ButLat,#OrigLon, #ButLon').prop('readonly', false);
 
 $(document).ready(function() {
 
