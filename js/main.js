@@ -20,6 +20,116 @@ var CteRadDeg = (180 / CtePI);
 }); } );
 
 
+$('#OrigLat, #ButLat').scroller({
+                    theme: 'ios7',
+                    mode: 'scroller',
+                    lang: 'fr',
+                    display: 'bottom',
+                    animate: 'slideup',
+                    showLabel: true,
+                    wheels: [ // Wheel groups array
+				    [ // First wheel group
+				        { // Wheel object
+				            label: ' ', 
+				            //keys: [1, 2, 3],  
+				            values: ['0','1', '2', '3','4','5','6','7','8','9'], 
+				        }, 
+				        { // Wheel object
+				            label: 'Â°', 
+				          //  keys: [1, 2],  
+				            values: ['0','1', '2', '3','4','5','6','7','8','9'], 
+				        } 
+				    ], 
+				    [ // Second wheel group
+				        { // Wheel object
+				            label: '', 
+				            values: ['0','1', '2', '3','4','5','6','7','8','9'], 
+				        }, 
+				        { // Wheel object 
+				            label: '\'', 
+				            values: ['0','1', '2', '3','4','5','6','7','8','9'], 
+				        } 
+				    ],[ 
+				        { // Wheel object
+				            label: '', 
+				            values: ['0','1', '2', '3','4','5','6','7','8','9'], 
+				        }, 
+				        { // Wheel object 
+				            label: '"', 
+				            values: ['0','1', '2', '3','4','5','6','7','8','9'], 
+				        } 
+				    ],[ 
+				        { // Wheel object
+				            label: '', 
+				            values: ['N','S'], 
+				        }, 
+						]],
+					formatResult: function(data){
+						var r="";
+						data.forEach( function(entry){
+							r=r+entry;
+						})
+						return r;
+					}
+      });
+$('#OrigLon, #ButLon').scroller({
+                    theme: 'ios7',
+                    mode: 'scroller',
+                    lang: 'fr',
+                    display: 'bottom',
+                    animate: 'slideup',
+                    showLabel: true,
+                    wheels: [ // Wheel groups array
+				    [ // First wheel group
+				        { // Wheel object
+				            label: ' ', 
+				            //keys: [1, 2, 3],  
+				            values: ['0','1', '2', '3','4','5','6','7','8','9'], 
+				        },{ // Wheel object
+				            label: ' ', 
+				            //keys: [1, 2, 3],  
+				            values: ['0','1', '2', '3','4','5','6','7','8','9'], 
+				        },  
+				        { // Wheel object
+				            label: 'Â°', 
+				          //  keys: [1, 2],  
+				            values: ['0','1', '2', '3','4','5','6','7','8','9'], 
+				        } 
+				    ], 
+				    [ // Second wheel group
+				        { // Wheel object
+				            label: '', 
+				            values: ['0','1', '2', '3','4','5','6','7','8','9'], 
+				        }, 
+				        { // Wheel object 
+				            label: '\'', 
+				            values: ['0','1', '2', '3','4','5','6','7','8','9'], 
+				        } 
+				    ],[ 
+				        { // Wheel object
+				            label: '', 
+				            values: ['0','1', '2', '3','4','5','6','7','8','9'], 
+				        }, 
+				        { // Wheel object 
+				            label: '"', 
+				            values: ['0','1', '2', '3','4','5','6','7','8','9'], 
+				        } 
+				    ],[ 
+				        { // Wheel object
+				            label: '', 
+				            values: ['W','E'], 
+				        }, 
+						]],
+					formatResult: function(data){
+						var r="";
+						data.forEach( function(entry){
+							r=r+entry;
+						})
+						return r;
+					}
+      });
+
+
 $(document).ready(function() {
 
 	$('#goButton').click(function(){
@@ -39,12 +149,12 @@ $(document).ready(function() {
 	
 });
 
-// Conversion d'un angle exprimŽ en degrŽs en sa valeur en radians
+// Conversion d'un angle exprimÃ© en degrÃ©s en sa valeur en radians
 function FctRadians(ParDegres) {
     return ParDegres * CteDegRad;
 }
 
-// Conversion d'un angle exprimŽ en radians en sa valeur en degrŽs
+// Conversion d'un angle exprimÃ© en radians en sa valeur en degrÃ©s
 function FctDegres(ParRadians ){
    return ParRadians * CteRadDeg;
 }
@@ -59,7 +169,7 @@ function FctRadiansNM(ParRadians){
    return CteRadNM * ParRadians;
 }
 
-// Conversion d'une latitude au format N010203 ou 010203N en numŽrique
+// Conversion d'une latitude au format N010203 ou 010203N en numÃ©rique
 function FctLatToDouble(ParLat) {
     
 	var LocDbl;
@@ -121,7 +231,7 @@ function FctLatToDouble(ParLat) {
     return LocDbl;
 }
 
-// Conversion d'une longitude au format W0010203 ou 0010203W en numŽrique
+// Conversion d'une longitude au format W0010203 ou 0010203W en numÃ©rique
 function FctLonToDouble(ParLon){
     
 	var LocDbl;
@@ -187,7 +297,7 @@ function FctLonToDouble(ParLon){
    return LocDbl;
 }
 
-// Affichage d'une route sur 3 caractres, 360 si 000
+// Affichage d'une route sur 3 caractÃ¨res, 360 si 000
 function FctFormatRoute(ParRoute){
         
     LocInt = mod2(ParRoute,360);    
@@ -198,7 +308,7 @@ function FctFormatRoute(ParRoute){
     }
 }
 
-//Calcul de la route orthodromique entre 2 points dŽfinis par latitude/longitude
+//Calcul de la route orthodromique entre 2 points dÃ©finis par latitude/longitude
 function FctRouteOrtho(ParLat1, ParLon1, ParLat2 , ParLon2 ) {
     var FctRouteOrtho;
     LocDTG =2*asin2(Math.sqrt(Math.pow(Math.sin((ParLat1 - ParLat2) / 2), 2)+Math.cos(ParLat1)*Math.cos(ParLat2)*Math.pow(Math.sin((ParLon1 - ParLon2)/2),2)));
@@ -210,12 +320,12 @@ function FctRouteOrtho(ParLat1, ParLon1, ParLat2 , ParLon2 ) {
     return FctRouteOrtho;
 }
 
-//Calcul de la distance orthodromique entre 2 points dŽfinis par latitude/longitude
+//Calcul de la distance orthodromique entre 2 points dÃ©finis par latitude/longitude
 function FctDistanceOrtho(ParLat1, ParLon1,ParLat2 ,ParLon2){
     return FctRadiansNM(2 * asin2(Math.sqrt(Math.pow(Math.sin((ParLat1 - ParLat2) / 2), 2)  + Math.cos(ParLat1) * Math.cos(ParLat2) * Math.pow(Math.sin((ParLon1 - ParLon2) / 2), 2)))).toFixed(2);
 }
 
-//Calcul de la route loxodromique entre 2 points dŽfinis par latitude/longitude
+//Calcul de la route loxodromique entre 2 points dÃ©finis par latitude/longitude
 function FctRouteLoxo(ParLat1, ParLon1, ParLat2, ParLon2 ) {
     LocDeltaLat = ParLat2 - ParLat1;
     if (Math.abs(ParLon2 - ParLon1) > CtePI ){
@@ -230,7 +340,7 @@ function FctRouteLoxo(ParLat1, ParLon1, ParLat2, ParLon2 ) {
     return FctDegres(atn2(LocDeltaLat, -LocDeltaLon));
 }
 
-// Calcul de la distance loxodromique entre 2 points dŽfinis par latitude/longitude
+// Calcul de la distance loxodromique entre 2 points dÃ©finis par latitude/longitude
 function FctDistanceLoxo(ParLat1, ParLon1 , ParLat2, ParLon2 ) {
     LocDeltaLat = ParLat2 - ParLat1
     if (Math.abs(ParLon2 - ParLon1) > CtePI){
