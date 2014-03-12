@@ -78,6 +78,9 @@ button{
 	outline: 0 none;
 }
 
+input{
+	text-align: center;
+}
 @media (max-width:768px) { 
 
 	.well h2{

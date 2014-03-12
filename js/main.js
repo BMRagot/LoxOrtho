@@ -5,7 +5,7 @@ var CteRadNM = ((180 * 60) / CtePI);
 var CteDegRad = (CtePI / 180);
 var CteRadDeg = (180 / CtePI);
 
-  $(function () { $("input").jqBootstrapValidation({
+  /* $(function () { */ $("input").jqBootstrapValidation({
        preventSubmit: true,
 	   submitError: function($form, event, errors) {
                             // Here I do nothing, but you could do something like display 
@@ -17,7 +17,7 @@ var CteRadDeg = (180 / CtePI);
 	    filter: function() {
 	        return $(this).is(":visible");
 	    }
-}); } );
+});/*  } ); */
 
 $('#OrigLat, #ButLat').scroller({
                     theme: 'ios7',
@@ -52,11 +52,7 @@ $('#OrigLat, #ButLat').scroller({
 				        }, 
 						]],
 					formatResult: function(data){
-						var r="";
-						data.forEach( function(entry){
-							r=r+entry;
-						})
-						return r;
+						return data[0]+"° "+data[1]+"' "+data[2]+"\" "+data[3];
 					}
       });
 $('#OrigLon, #ButLon').scroller({
@@ -91,11 +87,7 @@ $('#OrigLon, #ButLon').scroller({
 				        }, 
 						]],
 					formatResult: function(data){
-						var r="";
-						data.forEach( function(entry){
-							r=r+entry;
-						})
-						return r;
+						return data[0]+"° "+data[1]+"' "+data[2]+"\" "+data[3];
 					}
       });
 
@@ -105,11 +97,12 @@ $(document).ready(function() {
 
 	$('#goButton').click(function(){
 			
-		OrLat = $('#OrigLat').val().toUpperCase();
-		OrLon = $('#OrigLon').val().toUpperCase();
-		BuLat = $('#ButLat').val().toUpperCase();
-		BuLon = $('#ButLon').val().toUpperCase();
-		
+		OrLat = $('#OrigLat').val().replace("° ","/").replace("' ","/").replace("\" ","/").split("/").join("");
+		OrLon = $('#OrigLon').val().replace("° ","/").replace("' ","/").replace("\" ","/").split("/").join("");
+		BuLat = $('#ButLat').val().replace("° ","/").replace("' ","/").replace("\" ","/").split("/").join("");
+		BuLon = $('#ButLon').val().replace("° ","/").replace("' ","/").replace("\" ","/").split("/").join("");
+		console.log(OrLat);
+		console.log($('#OrigLat').val().replace("° ","/").replace("' ","/").replace(" ","/").split("/"));
 		$('#LoxoCap').text(FctFormatRoute(FctRouteLoxo(FctLatToDouble(OrLat),FctLonToDouble(OrLon),FctLatToDouble(BuLat),FctLonToDouble(BuLon))));
 		$('#LoxoDis').text(FctDistanceLoxo(FctLatToDouble(OrLat),FctLonToDouble(OrLon),FctLatToDouble(BuLat),FctLonToDouble(BuLon)));
 		$('#OrthCap').text(FctFormatRoute(FctRouteOrtho(FctLatToDouble(OrLat),FctLonToDouble(OrLon),FctLatToDouble(BuLat),FctLonToDouble(BuLon))));
