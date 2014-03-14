@@ -5,7 +5,7 @@ var CteRadNM = ((180 * 60) / CtePI);
 var CteDegRad = (CtePI / 180);
 var CteRadDeg = (180 / CtePI);
 
-  /* $(function () { */ $("input").jqBootstrapValidation({
+$("input").jqBootstrapValidation({
        preventSubmit: true,
 	   submitError: function($form, event, errors) {
                             // Here I do nothing, but you could do something like display 
@@ -17,7 +17,7 @@ var CteRadDeg = (180 / CtePI);
 	    filter: function() {
 	        return $(this).is(":visible");
 	    }
-});/*  } ); */
+});
 
 $('#OrigLat, #ButLat').scroller({
                     theme: 'ios7',
@@ -88,7 +88,7 @@ $('#OrigLon, #ButLon').scroller({
 					}
       });
 
-$('#OrigLat, #ButLat,#OrigLon, #ButLon').prop('readonly', false);
+/* $('#OrigLat, #ButLat,#OrigLon, #ButLon').prop('readonly', false); */
 
 $(document).ready(function() {
 

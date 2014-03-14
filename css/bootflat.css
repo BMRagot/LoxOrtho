@@ -815,6 +815,7 @@ a.thumbnail:hover, a.thumbnail:focus {
     -moz-box-shadow: none;
     box-shadow: none;
 }
+/*
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
@@ -822,6 +823,7 @@ fieldset[disabled] .form-control {
     opacity: 0.4;
     filter: alpha(opacity=4);
 }
+*/
 
 .form-inline .form-group,
 .form-inline .checkbox,

@@ -81,6 +81,21 @@ button{
 input{
 	text-align: center;
 }
+
+[readonly="readonly"],
+[readonly="readonly"]:focus, 
+select[readonly="readonly"], 
+select[readonly="readonly"]:focus,
+.form-control[readonly="readonly"],
+.form-control[readonly="readonly"]:focus,
+.content input[type="text"][readonly]:focus,
+textarea[readonly]:focus, 
+select[readonly]:focus {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none !important;
+    color: #000000;
+}
+
 @media (max-width:768px) { 
 
 	.well h2{
