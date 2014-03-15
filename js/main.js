@@ -51,6 +51,11 @@ $('#OrigLat, #ButLat').scroller({
 						]],
 					formatResult: function(data){
 						return data[0]+"° "+data[1]+"' "+data[2]+"\" "+data[3];
+					},
+					parseValue: function(string){
+						var result = [];
+						result = string.replace("° ","/").replace("' ","/").replace("\" ","/").split("/");
+                        return result;
 					}
       });
 $('#OrigLon, #ButLon').scroller({
@@ -85,10 +90,13 @@ $('#OrigLon, #ButLon').scroller({
 						]],
 					formatResult: function(data){
 						return data[0]+"° "+data[1]+"' "+data[2]+"\" "+data[3];
+					},
+					parseValue: function(string){
+                        var result = [];
+                        result = string.replace("° ","/").replace("' ","/").replace("\" ","/").split("/");
+                        return result;
 					}
       });
-
-/* $('#OrigLat, #ButLat,#OrigLon, #ButLon').prop('readonly', false); */
 
 $(document).ready(function() {
 
