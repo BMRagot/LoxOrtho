@@ -109,6 +109,15 @@ select[readonly]:focus {
 	hr{
 		margin: 5px;
 	}
+	
+	.long{
+		padding-left: 5px;
+		//padding-right: 5px;
+	}
+	.lat{
+		//padding-left: 5px;
+		padding-right: 5px;
+	}
 }
 
 .vcenter {
